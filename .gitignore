@@ -511,3 +511,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Discord addon for JetBrains
+*discord.xml
