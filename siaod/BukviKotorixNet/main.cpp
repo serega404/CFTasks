@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <set>
 
 using namespace std;
 
@@ -8,18 +9,22 @@ int main() {
     cin >> a >> b;
 
     a += b;
-    b = "";
 
-    sort(a.begin(), a.end());
+    set<char> chars;
 
+    for (char c: a)
+        chars.insert(c);
+
+    bool fail = true;
     for (int i = 65; i <= 90; i++) {
-        if (!binary_search(a.begin(), a.end(), i) && !binary_search(a.begin(), a.end(), i + 32))
-            b += char(i);
+        if (!binary_search(chars.begin(), chars.end(), i) && !binary_search(chars.begin(), chars.end(), i + 32)) {
+            cout << char(i);
+            fail = false;
+        }
+
     }
 
-    if (b.length() != 0)
-        cout << b;
-    else
+    if (fail)
         cout << 0;
 
     return 0;
