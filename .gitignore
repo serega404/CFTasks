@@ -457,3 +457,8 @@ FodyWeavers.xsd
 
 # Discord addon for JetBrains
 *discord.xml
+
+.vscode
+main
+CMakeLists.txt
+.idea
